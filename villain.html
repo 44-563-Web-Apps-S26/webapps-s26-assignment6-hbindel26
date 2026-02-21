@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Villains</title>
+</head>
+
+<body>
+
+
+<h1>Villains by hayden</h1>
+
+<form>
+    <label for="secretVillain">Funny Man</label>
+    <input type="password" id="secretVillain" value="Joker"> <br>
+
+    <label for="guessVillain">guess the villian</label>
+    <input type ="text" id="guessVillain"> <br>
+
+    <input type="button" onclick="checkVillain()" value="check the guess">
+</form>
+
+
+<p id="result">Caught: 0 | Got Away: 0</p>
+
+<script> 
+let caught = 0;
+let gotAway = 0;
+
+function checkVillain(){
+    const secret = document.getElementById("secretVillain").value;
+    const guess = document.getElementById("guessVillain").value;
+    
+    if(secret === guess){
+        caught++;
+        alert("You caught them");
+    } else {
+        gotAway++;
+        alert("Maybe next time");
+    }
+    document.getElementById("result").innerHTML = "Caught: " + caught + " | Got Away: " + gotAway;
+}
+</script>
+
+</body>
+</html> 
