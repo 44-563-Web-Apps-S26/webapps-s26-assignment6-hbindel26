@@ -54,20 +54,16 @@ function checkVillain(){
 let usePic = 1;
 
 function updatePic(){
-    const pic = document.getElementById("treePic");
     
     switch(usePic){
         case 1:
-            pic.src = "dogwood.jpg";
-            usePic = 2;
+            document.getElementById("treePic").src = "dogwood.jpg";
             break;
         case 2:
-            pic.src = "spruce.jpg";
-            usePic = 3;
+            document.getElementById("treePic").src = "spruce.jpg";
             break;
         case 3:
-            pic.src = "birch.jpg";
-            usePic = 1;
+            document.getElementById("treePic").src = "birch.jpg";
             break;
     }
 }
