@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Hayden Travel planner</title>
+</head>
+
+<body>
+
+<h2>Hayden Travel planner</h2>
+
+<form>
+    <label>
+        <input type ="checkbox" id="caribbean"  value="True">
+        Caribbean
+    </label>
+    <br>
+    <label>
+        <input type ="checkbox" id="mediterranean"  value="True">
+        Mediterranean
+    </label>
+    <br>
+
+    <label>
+        <input type ="checkbox" id="baltic"  value="True">
+        Baltic
+    </label>
+    <br><br>
+
+    <input type="button" onclick="choices()" value="Cruise Choices">
+</form>
+
+
+<p id="result"></p>
+
+<script> 
+
+let my_trip = {};
+
+function choices (){
+    my_trip = {};
+
+    my_trip.cari = document.getElementById("caribbean").checked;
+    my_trip.medi = document.getElementById("mediterranean").checked;
+    my_trip.balt = document.getElementById("baltic").checked;
+
+    document.getElementById("result").innerHTML = JSON.stringify(my_trip);
+}
+
+</script>
+
+</body>
+</html> 
