@@ -22,6 +22,17 @@
 
 <p id="result">Caught: 0 | Got Away: 0</p>
 
+<div>
+    <img
+        id="treePic"
+        src="birch.jpg"
+        alt="Tree Picture"
+        width="150"
+        height="150"
+        onclick="updatePic()"
+    >
+</div>
+
 <script> 
 let caught = 0;
 let gotAway = 0;
@@ -38,6 +49,27 @@ function checkVillain(){
         alert("Maybe next time");
     }
     document.getElementById("result").innerHTML = "Caught: " + caught + " | Got Away: " + gotAway;
+}
+
+let usePic = 1;
+
+function updatePic(){
+    const pic = document.getElementById("treePic");
+    
+    switch(usePic){
+        case 1:
+            pic.src = "dogwood.jpg";
+            usePic = 2;
+            break;
+        case 2:
+            pic.src = "spruce.jpg";
+            usePic = 3;
+            break;
+        case 3:
+            pic.src = "birch.jpg";
+            usePic = 1;
+            break;
+    }
 }
 </script>
 
