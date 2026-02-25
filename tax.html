@@ -27,6 +27,28 @@
 
 <p id="result"></p>
 
+<hr>
+
+<form>
+    <label>
+        <input type="radio" name="op" id="exponent" value="exponent" onclick="chooseOp()">
+        power
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="op" id="add" value="add" onclick="chooseOp()">
+        sum
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="op" id="mod" value="mod" onclick="chooseOp()">
+        mod
+    </label>
+    <br>
+</form>
+
+<p id="opResult"></p>
+
 <script> 
 
 function doTax(){
@@ -47,6 +69,24 @@ function doTax(){
         taxTable += "incomeLevel " + incomeLevel + " is " + tax + "; ";
     }
     document.getElementById("result").innerHTML = "Taxes are: " + taxTable;
+}
+function chooseOp(){
+    const income = Number(document.getElementById("income").value);
+    const baseRate = Number(document.getElementById("baseRate").value);
+
+    let outputText = "";
+    if(document.getElementById("exponent").checked){
+        const value = income ** baseRate;
+        outputText = income + " ** " + baseRate + " is " + value;
+    } else if(document.getElementById("add").checked){
+        const value = income + baseRate;
+        outputText = income + " + " + baseRate + " is " + value;
+    } else if(document.getElementById("mod").checked){
+        const value = income % baseRate;
+        outputText = income + " % " + baseRate + " is " + value;
+    }
+    
+    document.getElementById("opResult").innerHTML = outputText;
 }
 </script>
 
